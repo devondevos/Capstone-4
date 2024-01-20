@@ -1,0 +1,43 @@
+<%- include('partials/header.ejs') %> <!-- header -->
+
+<main>
+    <div>
+        <h1>Weather App</h1>
+        <form class="userForm" action="/" method="POST">
+            <input class="address userInput" type="text" name="userAddress" placeholder="Enter the address:" required autocomplete="off">
+            <input class="suburb userInput" type="text" name="userSuburb" placeholder="Enter the suburb:" required autocomplete="off">
+            <input class="days userInput" type="number" name="userDays" placeholder="Days:" required autocomplete="off">
+            <input class="submit userInput" type="submit" value="Submit">
+        </form>
+    </div>
+    <div class="results">
+    <div class="currentTimeAndDay">
+        <% if (locals.currentTimeAndDay) { %>
+            <%= currentTimeAndDay %>
+        <% } %>
+    </div>
+    <div>
+    </div>
+    <div class="container">
+        <% if (typeof errorMessage !== 'undefined' && errorMessage) { %>
+            <p><%= errorMessage %></p>
+        <% } else if (Array.isArray(data) && data.length > 0) { %>
+            <% data.forEach(entry => { %>
+                <div class="card-container">
+                    <div class="card">
+                        <p>Day: <%= entry.date %></p>
+                        <p class="dataTime">Time: <%= entry.time %></p>
+                        <p class="dataTemp">Temperature: <%= entry.temperature_2m %>°C</p>
+                    </div>
+                </div>
+            <% }); %>
+        <% } else { %>
+            <p>Enter your location correctly.</p>
+            <p>When entering your address, don't add the street type, eg. street, avenue, cresent etc.</p>
+        <% } %>
+    </div>
+    </div>
+    
+</main>
+
+<%- include('partials/footer.ejs') %><!-- footer -->

@@ -1,0 +1,121 @@
+body {
+    background-color: bisque;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, avenir next, avenir, segoe ui,
+    helvetica neue, helvetica, Ubuntu, roboto, noto, arial, sans-serif;
+}
+
+header {
+    background-color: #dcb084;
+    padding-top: 10px;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+footer {
+    text-align: center;
+    background-color: #dcb084;
+    color: white;
+    padding: 10px;
+}
+
+
+/* styles for normal/regular sized screens */
+#header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 5px; /* Adjust margin as needed */
+    text-decoration: none;
+}
+
+.nav-pills {
+    justify-content: flex-end;
+}
+
+.word {
+    font-size: 2rem; /* Adjust font size as needed */
+    color: black;
+    padding-left: 7px;
+}
+
+.nav-link {
+    color: black;
+}
+
+.nav-link:hover {
+    color: black;
+}
+
+.nav-item:active,
+.active-link {
+    background-color: bisque;
+}
+
+.nav-item {
+    transition: background-color 0.05s ease;
+}
+
+.nav-item:hover {
+    background-color: bisque;
+    border-radius: 6px;
+}
+
+.results {
+    position: relative;
+}
+
+.currentTimeAndDay {
+    position: absolute;
+    z-index: 1;
+    right: 15px;
+}
+
+.container {
+    position: absolute;
+    z-index: auto;
+    top: 25px;
+    width: 100%;
+    overflow-x: auto; /* or overflow-x: scroll; */
+    white-space: nowrap; /* prevent cards from wrapping onto new lines */
+    margin-left: 0;
+    padding-left: 0;
+    padding-top: 5px;
+    margin-top: 5px;
+}
+
+.card-container {
+    display: inline-flex;
+    width: 165px;
+    height: 135px;
+}
+
+.card {
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.userForm {
+    background-color: white;
+    border: 2px solid grey;
+    width: 95vw;
+}
+
+.userInput {
+    border: none;
+    width: 80%;
+    height: 40px;
+}
+
+.days, .submit {
+    width: 20%;
+}
